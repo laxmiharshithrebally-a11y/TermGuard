@@ -1,6 +1,7 @@
 {
   "name": "termguard",
   "version": "1.0.0",
+  "homepage": "https://termguard.onrender.com",
   "private": true,
   "scripts": {
     "dev": "next dev",

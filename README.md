@@ -1,91 +1,89 @@
-# FinePrint AI — Autonomous Contract & Deadline Defense Agent
+# 🛡️ TermGuard — Autonomous Contract & Notice Deadline Defense
 
-> **Tagline:** Stop letting fine print quietly drain your wallet.  
-> **Location:** `D:\project\fineprint`  
-> **Live Local URL:** [http://localhost:3000](http://localhost:3000)
-
----
-
-## 🌟 What FinePrint AI Does
-
-Companies count on consumers ignoring 20 pages of fine print. **FinePrint AI** is an autonomous contract intelligence and deadline enforcement agent that:
-1. **Reads Complex Agreements**: Ingests Gym Contracts, Apartment Leases, SaaS Agreements, Warranties, and Job Offers.
-2. **Flags Predatory Clauses & Traps**: Identifies sneaky auto-renewals, 45-day certified postal mail cancellation traps, and security deposit forfeitures with exact quoted source clauses.
-3. **Calculates Financial Liability**: Displays the exact dollars at stake (e.g. *$1,740 locked-in fees*).
-4. **Enforces Deadlines via Real Email**: Dispatches real emails to your personal inbox via **Resend** before the cancellation cutoff window closes.
-5. **Zero-Hallucination Side-by-Side Clause Visualizer**: Clicking any extracted trap highlights and scrolls to the exact contract sentence.
-6. **1-Click Pre-Written Dispute & Cancellation Notices**: Auto-generates formal legal cancellation letters citing the exact section codes.
-7. **The Trust Layer**: Immutable audit ledger recording every document parse, scheduled date, and Resend message ID.
+> **Live Website:** [https://termguard.onrender.com](https://termguard.onrender.com)  
+> **Command Dashboard:** [https://termguard.onrender.com/dashboard](https://termguard.onrender.com/dashboard)  
+> **GitHub Repository:** [https://github.com/laxmiharshithrebally-a11y/TermGuard](https://github.com/laxmiharshithrebally-a11y/TermGuard)  
 
 ---
 
-## 🚀 Quick Start Guide
+## 🌟 Overview
 
-### 1. Launch the Application
-The server is currently running at:
-👉 **[http://localhost:3000](http://localhost:3000)** (or [http://localhost:3000/dashboard](http://localhost:3000/dashboard))
+**TermGuard** is an autonomous contract intelligence and notice deadline defense system designed to stop fine print and predatory clauses from quietly draining your hard-earned money.
 
-To launch anytime from your terminal:
+Companies rely on consumers missing cancellation windows buried in 20-page agreements. TermGuard parses agreements, flags traps, calculates liability at stake in **₹ INR**, enforces **3-stage automated alerts (via Cellular SMS & Email)**, and automatically deletes expired deadlines.
+
+---
+
+## 🚀 Key Features
+
+### 1. 1.8-Second Animated Splash Intro
+- Features an animated security shield with pulsing energy radar rings, initialization progress bar, and metallic brand reveal when the site opens.
+
+### 2. Executive Dual-Tone Interface
+- **Canvas:** Soft ambient titanium mist (`#EEF2F6`) with subtle radial illumination.
+- **Option Cards & Controls:** Deep obsidian charcoal cards (`#0F172A`) with high-contrast typography, gold/amber ₹ INR indicators, and emerald status badges.
+
+### 3. 3-Stage Automated Notice Lifecycle & Auto-Deletion
+TermGuard autonomously monitors your contract cutoffs:
+- 🔔 **Stage 1 (1 Week Before / T - 7 Days):** Automated early warning alert dispatched via Cellular SMS and Email to give you ample time to prepare.
+- ⚠️ **Stage 2 (1 Day Before / T - 24 Hours):** Urgent action alert dispatched warning that tomorrow is the final notice cutoff.
+- 🛑 **Stage 3 (On Final Cutoff Day):** Final call alert dispatched indicating the window closes today.
+- 🗑️ **Stage 4 (Auto-Deletion After Expiration):** Once the cutoff date has passed, TermGuard automatically archives and removes the reminder from active view so your dashboard stays clean.
+
+### 4. Real Cellular Mobile SMS & Email Dispatch
+- **Cellular SMS:** Directly integrated with **Twilio** to deliver instant SMS notifications to verified mobile phones over the air (`[TermGuard Alert]`).
+- **Live Email:** Dispatches verified notice reminders via **Resend** with pre-written formal cancellation letter drafts citing exact contract clauses.
+
+### 5. Add Custom Agreements & Alert Topics
+- Dedicated **Last Date / Cutoff Date** calendar picker with cutoff time and money at risk in ₹ INR.
+- Pre-formats formal cancellation letters ready to copy and send to support or landlords.
+
+### 6. Zero-Hallucination Document Studio & Hazard Radar
+- Side-by-side agreement reader that automatically highlights and scrolls to the exact clause sentence in the contract text when clicked.
+
+### 7. Immutable Trust Ledger
+- Cryptographically verifiable audit trail recording every document parsed, trap extracted, scheduled deadline, and SMS/Email message ID.
+
+---
+
+## 🛠️ Tech Stack
+
+- **Framework:** Next.js 14 (App Router, Server Actions, TypeScript)
+- **Styling:** Tailwind CSS (Executive Dual-Tone Theme)
+- **SMS Gateway:** Twilio Cellular SMS API
+- **Email Gateway:** Resend API
+- **AI Core:** Google Gemini Flash Engine (heuristic + generative clause analysis)
+- **Hosting:** Render (`https://termguard.onrender.com`)
+
+---
+
+## 💻 Local Setup & Development
+
 ```bash
-cd D:\project\fineprint
-npm start
+# 1. Clone repository
+git clone https://github.com/laxmiharshithrebally-a11y/TermGuard.git
+cd TermGuard
+
+# 2. Install dependencies
+npm install
+
+# 3. Configure environment (.env.local)
+RESEND_API_KEY="your_resend_key"
+TWILIO_ACCOUNT_SID="your_twilio_sid"
+TWILIO_AUTH_TOKEN="your_twilio_token"
+TWILIO_PHONE_NUMBER="your_twilio_number"
+TWILIO_MESSAGING_SERVICE_SID="your_messaging_service_sid"
+
+# 4. Run development server
+npm run dev
+
+# 5. Open in browser
+http://localhost:3000
 ```
-Or double-click `run.bat` in File Explorer.
 
 ---
 
-## 🎯 1-Minute Live Demo / Viva Walkthrough
+## 🌐 Production Deployment
 
-When presenting or showcasing **FinePrint AI**:
-
-1. **The Pitch (Landing Page)**:
-   * Open `http://localhost:3000`.
-   * Show the headline: *"Stop letting fine print quietly drain your wallet."*
-   * Click **"Gym Membership"** in the **Interactive Sandbox** to show instant clause extraction on the public page without signing in.
-   * Click **"Launch Dashboard →"**.
-
-2. **The Executive Command Center (`/dashboard`)**:
-   * Point to the Top Stats HUD: **3 Contracts Guarded**, **$11,840 Protected Liability**, **Active Deadlines**, and **Agent Nervous System: Active**.
-
-3. **Screen 1: AI Agent Command Hub (Chat)**:
-   * Type: *"Remind me next Friday at 6pm to cancel my gym membership"*
-   * Show the agent's **Thought Process Badge** (*"Extracting temporal parameters..."*).
-   * Show the generated **Interactive Action Card** with the $145 risk calculation.
-   * Click **"Approve & Schedule Reminder"** $\rightarrow$ committed to the database in real time!
-
-4. **Screen 2: Document Studio & Clause Radar**:
-   * Switch to the **Documents & Radar** tab.
-   * Select the **Equinox Sports Club Agreement**.
-   * Click the **"Mandatory 45-Day Prior Certified Mail Cutoff"** card on the right.
-   * **Watch the left document pane smoothly scroll and glow amber on Section 4.2 & 7.2!** This proves zero hallucination.
-
-5. **Screen 3: Deadlines & Execution Center**:
-   * Switch to the **Deadlines** tab.
-   * Show the live countdown clock (*"Renews in 339d 21h 14m 33s"*).
-   * Click **"📄 Legal Notice"** to reveal the pre-written cancellation letter citing the contract section.
-   * Click **"⚡ Send Real Email Now"** $\rightarrow$ shows immediate delivery toast!
-   * Click **"⚡ Run Cron Check Now"** to demonstrate how background workers trigger alerts automatically.
-
-6. **Screen 4: The Trust Layer (Activity Log) & Outbox Inspector**:
-   * Click **"Trust Log"** in the navbar to show the cryptographic-style audit ledger with timestamps.
-   * Click **"Outbox"** in the top bar to inspect the authentic rendered HTML email that arrived in the user's inbox!
-
----
-
-## ⚙️ Configuration & Real Email Setup
-
-Click the **⚙️ Settings** icon in the top navigation bar to configure:
-* **Target Notification Email**: Enter your real personal email (e.g., `yourname@gmail.com`).
-* **Resend API Key**: Enter your key from [resend.com](https://resend.com) (`re_...`).  
-  *(If no key is entered, FinePrint AI safely renders and logs the authentic email in the In-App Outbox Inspector).*
-* **Google Gemini API Key**: Enter your Gemini key (`AIza...`) for extended conversational reasoning.
-
----
-
-## 🏗️ Architecture Stack
-
-* **Frontend & Backend**: Next.js 14 (App Router) + React 18 + TypeScript + Tailwind CSS
-* **Agent Brain**: Google Gemini 2.5 Flash + Conversational Heuristic Safeguard Engine
-* **Delivery Nervous System**: Resend Email API + Vercel Cron Dispatch Worker
-* **Storage & Ledger**: Persistent zero-dependency JSON database (`/data/db.json`)
-* **Design Theme**: Cyber Obsidian (`#090D16`), Cyber Cyan (`#06B6D4`), and Amber Hazard Glow
+TermGuard is configured for 1-click deployment on Render via [`render.yaml`](render.yaml):
+- **Live URL:** [https://termguard.onrender.com](https://termguard.onrender.com)
