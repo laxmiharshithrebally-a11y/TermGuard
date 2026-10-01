@@ -1,0 +1,83 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --bg-main: #edf2f7;
+  --bg-card-dark: #0f172a;
+  --bg-card-dark-hover: #1e293b;
+  --border-dark: #334155;
+  --text-primary: #0f172a;
+  --text-dark-card: #f8fafc;
+  --accent-indigo: #6366f1;
+  --accent-emerald: #10b981;
+  --accent-amber: #f59e0b;
+  --accent-rose: #f43f5e;
+}
+
+body {
+  background-color: #eef2f6;
+  color: #0f172a;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Inter", "Plus Jakarta Sans", sans-serif;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+  background-image: 
+    radial-gradient(ellipse 60% 50% at 50% -10%, rgba(99, 102, 241, 0.08), transparent),
+    radial-gradient(ellipse 50% 40% at 90% 90%, rgba(16, 185, 129, 0.05), transparent);
+  background-attachment: fixed;
+}
+
+/* Crisp Clean Scrollbars */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: #e2e8f0;
+}
+::-webkit-scrollbar-thumb {
+  background: #94a3b8;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #64748b;
+}
+
+/* Executive Dark Option Card Style */
+.exec-dark-card {
+  background: #0f172a;
+  border: 1px solid #1e293b;
+  color: #f8fafc;
+  border-radius: 1rem;
+  box-shadow: 0 4px 6px -1px rgba(15, 23, 42, 0.1), 0 2px 4px -2px rgba(15, 23, 42, 0.06);
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.exec-dark-card:hover {
+  border-color: #334155;
+  background: #131c31;
+  box-shadow: 0 10px 15px -3px rgba(15, 23, 42, 0.15), 0 4px 6px -4px rgba(15, 23, 42, 0.1);
+}
+
+/* Executive Dual-Tone Pill */
+.exec-pill {
+  background: #1e293b;
+  border: 1px solid #334155;
+  color: #cbd5e1;
+}
+
+/* Highlighted clauses inside document viewer */
+.clause-highlight-amber {
+  background-color: rgba(245, 158, 11, 0.18) !important;
+  border-left: 4px solid #f59e0b !important;
+  color: #fbbf24 !important;
+  padding: 8px 12px;
+  border-radius: 6px;
+}
+
+.clause-highlight-blue {
+  background-color: rgba(99, 102, 241, 0.18) !important;
+  border-left: 4px solid #6366f1 !important;
+  color: #a5b4fc !important;
+  padding: 8px 12px;
+  border-radius: 6px;
+}

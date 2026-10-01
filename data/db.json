@@ -1,0 +1,285 @@
+{
+  "documents": [
+    {
+      "id": "doc-1790870155726",
+      "title": "car",
+      "category": "INSURANCE",
+      "uploadedAt": "2026-10-01T15:55:55.726Z",
+      "rawContent": "CAR\nCATEGORY: INSURANCE\nDEADLINE: 2026-10-01 18:00\nMONEY AT RISK: ₹10,000 INR\nTERMS: Notice required prior to cutoff to avoid auto-debit.",
+      "riskScore": 55,
+      "totalFinancialExposure": 450,
+      "clauses": [
+        {
+          "id": "clause-1790870155726-4-notice",
+          "clauseTitle": "Mandatory Advance Notice Requirement",
+          "sourceSection": "General",
+          "quotedText": "TERMS: Notice required prior to cutoff to avoid auto-debit.",
+          "deadlineDate": "2026-11-15",
+          "deadlineTime": "18:00",
+          "riskLevel": "WARNING",
+          "financialImpactUsd": 450,
+          "explanation": "Strict advance notice window enforced. Failure to comply forfeits deposits or triggers penalty dues.",
+          "actionRequired": "Submit certified termination notice in compliance with stated delivery protocol."
+        }
+      ],
+      "status": "ANALYZED"
+    },
+    {
+      "id": "doc-gym-001",
+      "title": "Cult.fit & Gold's Gym — Annual Fitness Pass Agreement",
+      "category": "SUBSCRIPTION",
+      "uploadedAt": "2026-09-29T15:54:53.072Z",
+      "riskScore": 85,
+      "totalFinancialExposure": 29990,
+      "status": "ANALYZED",
+      "rawContent": "CULT.FIT & GOLD'S FITNESS CLUB — ANNUAL MEMBERSHIP AGREEMENT\nMEMBER NAME: Harshith R.\nCITY: Bangalore / Hyderabad, India\nMEMBERSHIP TYPE: All-Access Elite Annual Pass\nSTART DATE: October 15, 2025\n\nSECTION 1: ANNUAL MEMBERSHIP & FEES\n1.1 The Member agrees to an annual 12-month membership for a total fee of ₹29,990 INR (inclusive of 18% GST).\n1.2 Monthly installment equivalent equals ₹2,499 INR per month.\n\nSECTION 4: AUTOMATIC CARD RENEWAL (IMPORTANT TRAP)\n4.1 On October 14, 2026, this annual pass shall automatically renew for another full 12 months at the standard rate of ₹32,000 INR.\n4.2 Auto-debit will be charged directly to your saved UPI / credit card without sending any separate OTP or warning message.\n4.3 TO CANCEL AUTO-RENEWAL: You must submit a written cancellation request at least 30 days before renewal (DEADLINE: SEPTEMBER 14, 2026). Late cancellations will not be refunded.\n\nSECTION 7: REFUND & CANCELLATION RESTRICTIONS\n7.1 Membership fees once debited are strictly non-refundable under any circumstance.\n7.2 If cancellation is not submitted before September 14, 2026, the full ₹32,000 INR will be debited for the next year.",
+      "clauses": [
+        {
+          "id": "clause-gym-1",
+          "clauseTitle": "30-Day Prior Cancellation Cutoff (Auto-Debit Trap)",
+          "sourceSection": "Section 4.3 & Section 7.2",
+          "quotedText": "TO CANCEL AUTO-RENEWAL: You must submit a written cancellation request at least 30 days before renewal (DEADLINE: SEPTEMBER 14, 2026). Late cancellations will not be refunded.",
+          "deadlineDate": "2026-09-14",
+          "deadlineTime": "18:00",
+          "riskLevel": "CRITICAL",
+          "financialImpactUsd": 32000,
+          "explanation": "If you do not cancel before September 14, they will automatically charge ₹32,000 to your credit card / UPI for another full year with zero refund.",
+          "actionRequired": "Submit cancellation request to gym support before September 14, 2026."
+        },
+        {
+          "id": "clause-gym-2",
+          "clauseTitle": "Price Increase Upon Renewal (+₹2,010)",
+          "sourceSection": "Section 4.1",
+          "quotedText": "this annual pass shall automatically renew for another full 12 months at the standard rate of ₹32,000 INR.",
+          "deadlineDate": "2026-10-14",
+          "deadlineTime": "23:59",
+          "riskLevel": "WARNING",
+          "financialImpactUsd": 2010,
+          "explanation": "The annual fee silently jumps from ₹29,990 to ₹32,000 when it renews automatically.",
+          "actionRequired": "Review your membership plan before initial term ends."
+        }
+      ]
+    },
+    {
+      "id": "doc-lease-002",
+      "title": "2BHK Apartment Rental Agreement (Flat 402, Green Glen Layout, Bangalore)",
+      "category": "LEASE",
+      "uploadedAt": "2026-09-26T15:54:53.072Z",
+      "riskScore": 78,
+      "totalFinancialExposure": 70000,
+      "status": "ANALYZED",
+      "rawContent": "HOUSE RENT AGREEMENT (RESIDENTIAL LEASE)\nPREMISES: Flat No. 402, 4th Floor, Green Glen Layout, Bellandur, Bangalore - 560103\nLANDLORD: V. Narayana Rao\nTENANT: Harshith R.\nMONTHLY RENT: ₹35,000 INR per month\nSECURITY DEPOSIT: ₹1,50,000 INR (Rupees One Lakh Fifty Thousand)\nLEASE PERIOD: July 1, 2025 to June 30, 2026\n\nSECTION 3: SECURITY DEPOSIT & FORFEITURE PENALTY\n3.1 The Tenant has paid a refundable interest-free security deposit of ₹1,50,000 INR to the Landlord.\n3.2 MANDATORY 2-MONTH NOTICE PERIOD: Either party must give two (2) full months written notice before vacating the flat (DEADLINE: APRIL 30, 2026).\n3.3 PENALTY CLAUSE: If the Tenant fails to give full 2 months notice in writing before vacating, Landlord will forfeit two months of rent (₹70,000 INR) directly from the security deposit.\n\nSECTION 6: PAINTING & CLEANING CHARGES\n6.1 A fixed deduction of one month rent (₹35,000 INR) will be deducted from deposit towards repainting and deep cleaning upon handover.",
+      "clauses": [
+        {
+          "id": "clause-lease-1",
+          "clauseTitle": "2-Month Move-Out Notice (₹70,000 Deposit Forfeiture Trap)",
+          "sourceSection": "Section 3.2 & Section 3.3",
+          "quotedText": "Either party must give two (2) full months written notice before vacating the flat (DEADLINE: APRIL 30, 2026)... Landlord will forfeit two months of rent (₹70,000 INR) directly from the security deposit.",
+          "deadlineDate": "2026-04-30",
+          "deadlineTime": "18:00",
+          "riskLevel": "CRITICAL",
+          "financialImpactUsd": 70000,
+          "explanation": "If you do not give written notice to the landlord by April 30, the landlord will legally cut ₹70,000 from your security deposit.",
+          "actionRequired": "Send official written move-out notice to landlord on WhatsApp & Email before April 30, 2026."
+        },
+        {
+          "id": "clause-lease-2",
+          "clauseTitle": "Fixed Painting & Cleaning Deduction (₹35,000)",
+          "sourceSection": "Section 6.1",
+          "quotedText": "A fixed deduction of one month rent (₹35,000 INR) will be deducted from deposit towards repainting and deep cleaning upon handover.",
+          "deadlineDate": "2026-06-15",
+          "deadlineTime": "12:00",
+          "riskLevel": "WARNING",
+          "financialImpactUsd": 35000,
+          "explanation": "Landlord will automatically deduct ₹35,000 from your deposit unless inspected and agreed upon in advance.",
+          "actionRequired": "Schedule a flat inspection with landlord 15 days before leaving."
+        }
+      ]
+    },
+    {
+      "id": "doc-saas-003",
+      "title": "Zoho / AWS Cloud Services India — Annual Business Plan",
+      "category": "SUBSCRIPTION",
+      "uploadedAt": "2026-09-21T15:54:53.072Z",
+      "riskScore": 65,
+      "totalFinancialExposure": 48000,
+      "status": "ANALYZED",
+      "rawContent": "BUSINESS CLOUD SOFTWARE & HOSTING SERVICES AGREEMENT\nCUSTOMER: TechVentures India Pvt Ltd\nSERVICE: Business Enterprise Suite\nANNUAL COST: ₹48,000 INR per year (billed annually)\nEXPIRY DATE: November 30, 2026\n\nSECTION 5: AUTO-RENEWAL & NOTICE PERIOD\n5.1 This business subscription will automatically renew on December 1, 2026 for another full 12-month period at ₹48,000 INR.\n5.2 To stop auto-renewal, the customer must submit an opt-out cancellation ticket at least 30 days in advance (DEADLINE: OCTOBER 31, 2026).\n5.3 Any cancellation submitted after October 31 will be rejected, and the full ₹48,000 INR will be debited.",
+      "clauses": [
+        {
+          "id": "clause-saas-1",
+          "clauseTitle": "30-Day Prior Opt-Out Window (₹48,000 Lock-in)",
+          "sourceSection": "Section 5.2 & Section 5.3",
+          "quotedText": "To stop auto-renewal, the customer must submit an opt-out cancellation ticket at least 30 days in advance (DEADLINE: OCTOBER 31, 2026). Any cancellation submitted after October 31 will be rejected, and the full ₹48,000 INR will be debited.",
+          "deadlineDate": "2026-10-31",
+          "deadlineTime": "23:59",
+          "riskLevel": "CRITICAL",
+          "financialImpactUsd": 48000,
+          "explanation": "If you miss October 31 by even 1 day, you will be locked into paying ₹48,000 for another whole year.",
+          "actionRequired": "Submit opt-out ticket to support before October 31, 2026."
+        }
+      ]
+    }
+  ],
+  "reminders": [
+    {
+      "id": "rem-1790870155704-rjdb",
+      "title": "Notice Deadline: car",
+      "dueAt": "2026-10-01T12:30:00.000Z",
+      "sourceClauseQuote": "Must deliver written notice before 2026-10-01 to cancel without penalty.",
+      "sourceSection": "Notice & Cancellation Terms",
+      "financialImpactUsd": 10000,
+      "documentTitle": "car",
+      "status": "TRIGGERED",
+      "createdAt": "2026-10-01T15:55:55.704Z",
+      "cancellationNoticeDraft": "To Support / Management Team,\n\nSubject: Formal Notice of Cancellation / Non-Renewal for c\n\nPlease accept this formal written notice that I will NOT be renewing this agreement upon expiration. Please ensure no automatic debit or renewal charges are billed to my account/card.\n\nPlease confirm receipt of this notice in writing.\n\nThank you,\nHarshith R.",
+      "notifiedAt": "2026-10-01T15:56:25.373Z",
+      "notificationEmail": "laxmiharshithrebally@gmail.com",
+      "resendMessageId": "01a0f82e-68c4-7101-a616-42f226f950d0"
+    },
+    {
+      "id": "rem-gym-01",
+      "documentId": "doc-gym-001",
+      "documentTitle": "Cult.fit & Gold's Gym — Annual Fitness Pass",
+      "title": "Cancel Gym Auto-Renewal to prevent ₹32,000 auto-debit",
+      "dueAt": "2026-09-14T18:00:00.000Z",
+      "sourceSection": "Section 4.3 & 7.2",
+      "sourceClauseQuote": "TO CANCEL AUTO-RENEWAL: You must submit a written cancellation request at least 30 days before renewal (DEADLINE: SEPTEMBER 14, 2026). Late cancellations will not be refunded.",
+      "financialImpactUsd": 32000,
+      "status": "PENDING",
+      "createdAt": "2026-09-29T15:55:04.404Z",
+      "cancellationNoticeDraft": "To Support / Membership Team,\n\nRE: Formal Notice of Cancellation for Annual Gym Membership\n\nAs per Section 4.3 of the Membership Terms, I am providing my 30-day written notice to cancel my annual membership pass. Please do not auto-debit my credit card / UPI for ₹32,000 for the upcoming renewal term.\n\nPlease confirm receipt of this cancellation notice in writing.\n\nThank you,\nHarshith R."
+    },
+    {
+      "id": "rem-lease-02",
+      "documentId": "doc-lease-002",
+      "documentTitle": "2BHK Apartment Rental Agreement (Flat 402, Bangalore)",
+      "title": "Deliver 2-Month Move-Out Notice to Landlord (Protect ₹70,000 Deposit)",
+      "dueAt": "2026-04-30T18:00:00.000Z",
+      "sourceSection": "Section 3.2 & 3.3",
+      "sourceClauseQuote": "Either party must give two (2) full months written notice before vacating the flat (DEADLINE: APRIL 30, 2026)... Landlord will forfeit two months of rent (₹70,000 INR) directly from the security deposit.",
+      "financialImpactUsd": 70000,
+      "status": "PENDING",
+      "createdAt": "2026-09-27T15:55:04.404Z",
+      "cancellationNoticeDraft": "Dear Landlord (Mr. Narayana Rao),\n\nSubject: Formal 2-Month Notice to Vacate Flat 402 (Green Glen Layout, Bellandur)\n\nAs per Section 3.2 of our Rental Agreement, I am giving formal written notice that I will be vacating the flat on June 30, 2026. Please schedule the flat handover inspection and process the full return of my security deposit (₹1,50,000) minus standard painting deductions.\n\nRegards,\nHarshith R."
+    },
+    {
+      "id": "rem-saas-03",
+      "documentId": "doc-saas-003",
+      "documentTitle": "Zoho / AWS Cloud Services India — Annual Business Plan",
+      "title": "Submit 30-Day Opt-Out Ticket to prevent ₹48,000 renewal charge",
+      "dueAt": "2026-10-31T23:59:00.000Z",
+      "sourceSection": "Section 5.2",
+      "sourceClauseQuote": "To stop auto-renewal, the customer must submit an opt-out cancellation ticket at least 30 days in advance (DEADLINE: OCTOBER 31, 2026).",
+      "financialImpactUsd": 48000,
+      "status": "PENDING",
+      "createdAt": "2026-09-24T15:55:04.404Z"
+    }
+  ],
+  "auditLogs": [
+    {
+      "id": "log-1790870185373-t3nsx",
+      "timestamp": "2026-10-01T15:56:25.373Z",
+      "actionType": "EMAIL_DELIVERED",
+      "summary": "Real Email Dispatched via Resend: Notice Deadline: car",
+      "details": "Dispatched to laxmiharshithrebally@gmail.com. Resend Message ID: 01a0f82e-68c4-7101-a616-42f226f950d0. HTTP 200 OK.",
+      "targetId": "rem-1790870155704-rjdb",
+      "status": "SUCCESS"
+    },
+    {
+      "id": "log-1790870162234-87hol",
+      "timestamp": "2026-10-01T15:56:02.234Z",
+      "actionType": "EMAIL_TRIGGERED",
+      "summary": "SMS Alert Generated: 9246972662",
+      "details": "Alert text prepared for 9246972662: \"[TermGuard Alert] Hi Harshith, action required: Notice Deadline: car. Cutoff: 1 Oct 2026. Protect ₹10,000. Check your TermGuard dashboard.\".",
+      "targetId": "rem-1790870155704-rjdb",
+      "status": "INFO"
+    },
+    {
+      "id": "log-1790870155728-g7tsx",
+      "timestamp": "2026-10-01T15:55:55.728Z",
+      "actionType": "DOC_PARSED",
+      "summary": "Document Ingested: car",
+      "details": "Analyzed 137 characters. Extracted 1 clauses. Total financial exposure: $450.",
+      "targetId": "doc-1790870155726",
+      "status": "SUCCESS"
+    },
+    {
+      "id": "log-1790870155718-5oyw2",
+      "timestamp": "2026-10-01T15:55:55.718Z",
+      "actionType": "REMINDER_CREATED",
+      "summary": "Reminder Scheduled: Notice Deadline: car",
+      "details": "Enforcement set for 1/10/2026, 6:00:00 pm. Protected liability: $10000.",
+      "targetId": "rem-1790870155704-rjdb",
+      "status": "SUCCESS"
+    },
+    {
+      "id": "log-1790870104405-nsnxp",
+      "timestamp": "2026-10-01T15:55:04.405Z",
+      "actionType": "CRON_HEARTBEAT",
+      "summary": "System State Reset to Demo Presets",
+      "details": "Restored sample contracts, initial deadlines, and verified baseline state.",
+      "status": "INFO"
+    },
+    {
+      "id": "log-seed-1",
+      "timestamp": "2026-09-29T15:55:04.404Z",
+      "actionType": "DOC_UPLOADED",
+      "summary": "Contract Scanned: Cult.fit Gym Membership",
+      "details": "Parsed 4 sections. Found auto-debit renewal trap. Financial liability at risk: ₹32,000 INR.",
+      "status": "SUCCESS"
+    },
+    {
+      "id": "log-seed-2",
+      "timestamp": "2026-09-29T15:55:05.404Z",
+      "actionType": "CLAUSE_EXTRACTED",
+      "summary": "Trap Detected: 30-Day Auto-Debit Cutoff",
+      "details": "Section 4.3 requires notice before Sept 14, 2026 to stop ₹32,000 debit.",
+      "status": "WARNING"
+    },
+    {
+      "id": "log-seed-3",
+      "timestamp": "2026-09-29T15:55:06.404Z",
+      "actionType": "REMINDER_CREATED",
+      "summary": "Deadline Alert Scheduled for Sept 14, 2026",
+      "details": "Scheduled to notify laxmiharshithrebally@gmail.com and phone before auto-debit triggers.",
+      "status": "SUCCESS"
+    },
+    {
+      "id": "log-seed-4",
+      "timestamp": "2026-10-01T12:55:04.404Z",
+      "actionType": "CRON_HEARTBEAT",
+      "summary": "Background Cron Check Completed",
+      "details": "Monitored 3 active deadlines. Total liability protected: ₹1,50,000 INR.",
+      "status": "INFO"
+    }
+  ],
+  "emailLogs": [
+    {
+      "id": "email-1790870185372-etlol",
+      "timestamp": "2026-10-01T15:56:25.372Z",
+      "recipient": "laxmiharshithrebally@gmail.com",
+      "subject": "[TermGuard Action Required]: Notice Deadline: car",
+      "htmlContent": "\n<!DOCTYPE html>\n<html>\n<head>\n  <meta charset=\"utf-8\">\n  <title>TermGuard Alert</title>\n  <style>\n    body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; background-color: #0f172a; color: #f8fafc; margin: 0; padding: 24px; }\n    .container { max-width: 600px; margin: 0 auto; background-color: #1e293b; border: 1px solid #334155; border-radius: 16px; overflow: hidden; box-shadow: 0 20px 35px rgba(0,0,0,0.5); }\n    .header { background: linear-gradient(135deg, #090d16 0%, #1e1b4b 100%); padding: 28px 32px; border-bottom: 2px solid #6366f1; }\n    .brand { font-size: 13px; text-transform: uppercase; letter-spacing: 2px; color: #818cf8; font-weight: 700; margin-bottom: 8px; }\n    .title { font-size: 20px; font-weight: 700; color: #ffffff; margin: 0; line-height: 1.3; }\n    .content { padding: 32px; }\n    .badge { display: inline-block; padding: 6px 14px; border-radius: 9999px; font-size: 12px; font-weight: 700; text-transform: uppercase; margin-bottom: 16px; background-color: rgba(99, 102, 241, 0.2); color: #a5b4fc; border: 1px solid rgba(99, 102, 241, 0.4); }\n    .deadline-box { background-color: #0f172a; border-radius: 12px; padding: 18px 20px; margin: 20px 0; border-left: 4px solid #6366f1; }\n    .deadline-label { font-size: 11px; color: #94a3b8; text-transform: uppercase; letter-spacing: 1px; font-weight: 600; }\n    .deadline-value { font-size: 17px; font-weight: 700; color: #38bdf8; margin-top: 4px; }\n    .financial-alert { background-color: rgba(245, 158, 11, 0.15); border: 1px solid rgba(245, 158, 11, 0.3); border-radius: 10px; padding: 14px 18px; margin: 20px 0; color: #fbbf24; font-size: 14px; }\n    .clause-box { background-color: #0b0f17; border: 1px dashed #475569; border-radius: 10px; padding: 16px; margin: 20px 0; font-family: monospace; font-size: 12px; line-height: 1.6; color: #e2e8f0; }\n    .clause-title { font-size: 11px; text-transform: uppercase; letter-spacing: 1px; color: #94a3b8; margin-bottom: 8px; font-weight: 600; }\n    .footer { background-color: #090d16; padding: 20px 32px; border-top: 1px solid #1e293b; text-align: center; font-size: 12px; color: #64748b; }\n    .btn { display: inline-block; background-color: #4f46e5; color: #ffffff !important; text-decoration: none; padding: 12px 24px; border-radius: 8px; font-weight: 700; font-size: 14px; margin-top: 12px; }\n  </style>\n</head>\n<body>\n  <div class=\"container\">\n    <div class=\"header\">\n      <div class=\"brand\">TermGuard • Autonomous Contract Defense</div>\n      <h1 class=\"title\">⚠️ Action Required: Contract Cutoff Imminent</h1>\n    </div>\n    <div class=\"content\">\n      <span class=\"badge\">Deadline Alert</span>\n      <p style=\"font-size: 15px; line-height: 1.6; margin-top: 0; color: #cbd5e1;\">\n        TermGuard has detected an active contract obligation requiring your prompt intervention to prevent unwanted financial commitment or penalty forfeiture.\n      </p>\n\n      <div class=\"deadline-box\">\n        <div class=\"deadline-label\">Action Item</div>\n        <div style=\"font-size: 16px; font-weight: 600; color: #ffffff; margin-top: 4px;\">Notice Deadline: car</div>\n        <div class=\"deadline-label\" style=\"margin-top: 12px;\">Enforcement Cutoff Timestamp</div>\n        <div class=\"deadline-value\">Thursday, 1 October 2026 at 06:00 pm</div>\n      </div>\n\n      \n      <div class=\"financial-alert\">\n        💰 <strong>Potential Money at Risk:</strong> ₹10,000 INR\n      </div>\n      \n\n      \n      <div class=\"clause-box\">\n        <div class=\"clause-title\">SOURCE CLAUSE (Notice & Cancellation Terms):</div>\n        \"Must deliver written notice before 2026-10-01 to cancel without penalty.\"\n      </div>\n      \n\n      \n      <div style=\"margin-top: 24px;\">\n        <div class=\"deadline-label\" style=\"margin-bottom: 8px;\">PRE-WRITTEN NOTICE DRAFT READY TO COPY:</div>\n        <div class=\"clause-box\" style=\"white-space: pre-wrap; font-size: 12px; color: #cbd5e1;\">\nTo Support / Management Team,\n\nSubject: Formal Notice of Cancellation / Non-Renewal for c\n\nPlease accept this formal written notice that I will NOT be renewing this agreement upon expiration. Please ensure no automatic debit or renewal charges are billed to my account/card.\n\nPlease confirm receipt of this notice in writing.\n\nThank you,\nHarshith R.\n        </div>\n      </div>\n      \n\n      <div style=\"text-align: center; margin-top: 28px;\">\n        <a href=\"http://localhost:3000/dashboard\" class=\"btn\">Open TermGuard Console →</a>\n      </div>\n    </div>\n    <div class=\"footer\">\n      Sent by <strong>TermGuard Autonomous Defense Core</strong> • Recipient: laxmiharshithrebally@gmail.com<br/>\n      Cryptographic Audit Hash: #rem-1790870155704-rjdb\n    </div>\n  </div>\n</body>\n</html>\n  ",
+      "status": "DELIVERED",
+      "messageId": "01a0f82e-68c4-7101-a616-42f226f950d0",
+      "reminderId": "rem-1790870155704-rjdb",
+      "reminderTitle": "Notice Deadline: car",
+      "sourceClause": "Must deliver written notice before 2026-10-01 to cancel without penalty."
+    }
+  ],
+  "settings": {
+    "userEmail": "laxmiharshithrebally@gmail.com",
+    "targetPhoneNumber": "9246972662",
+    "resendApiKey": "",
+    "geminiApiKey": "",
+    "twilioAccountSid": "",
+    "twilioAuthToken": "",
+    "twilioPhoneNumber": "",
+    "twilioMessagingServiceSid": "",
+    "fast2smsApiKey": "",
+    "cronIntervalMinutes": 5,
+    "autoSendEmails": true,
+    "autoSendSms": true
+  }
+}
