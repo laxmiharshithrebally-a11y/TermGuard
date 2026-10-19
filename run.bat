@@ -1,7 +1,7 @@
 @echo off
-title FinePrint AI Server
-echo Starting FinePrint AI - Autonomous Contract & Deadline Defense...
-cd /d "D:\project\fineprint"
+title TermGuard Server
+echo Starting TermGuard - Autonomous Contract & Deadline Defense...
+cd /d "%~dp0"
 start http://localhost:3000
-npm start
+npm run dev
 pause
