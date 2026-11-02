@@ -146,9 +146,12 @@
       "sourceSection": "Section 4.3 & 7.2",
       "sourceClauseQuote": "TO CANCEL AUTO-RENEWAL: You must submit a written cancellation request at least 30 days before renewal (DEADLINE: SEPTEMBER 14, 2026). Late cancellations will not be refunded.",
       "financialImpactUsd": 32000,
-      "status": "PENDING",
+      "status": "TRIGGERED",
       "createdAt": "2026-09-29T15:55:04.404Z",
-      "cancellationNoticeDraft": "To Support / Membership Team,\n\nRE: Formal Notice of Cancellation for Annual Gym Membership\n\nAs per Section 4.3 of the Membership Terms, I am providing my 30-day written notice to cancel my annual membership pass. Please do not auto-debit my credit card / UPI for ₹32,000 for the upcoming renewal term.\n\nPlease confirm receipt of this cancellation notice in writing.\n\nThank you,\nHarshith R."
+      "cancellationNoticeDraft": "To Support / Membership Team,\n\nRE: Formal Notice of Cancellation for Annual Gym Membership\n\nAs per Section 4.3 of the Membership Terms, I am providing my 30-day written notice to cancel my annual membership pass. Please do not auto-debit my credit card / UPI for ₹32,000 for the upcoming renewal term.\n\nPlease confirm receipt of this cancellation notice in writing.\n\nThank you,\nHarshith R.",
+      "notifiedAt": "2026-10-30T08:18:21.785Z",
+      "notificationEmail": "laxmiharshithrebally@gmail.com",
+      "resendMessageId": "01a18be3-73d2-70f1-9c6f-8d312248f76e"
     },
     {
       "id": "rem-lease-02",
@@ -177,6 +180,15 @@
     }
   ],
   "auditLogs": [
+    {
+      "id": "log-1793348301784-lj1ik",
+      "timestamp": "2026-10-30T08:18:21.784Z",
+      "actionType": "EMAIL_DELIVERED",
+      "summary": "Real Email Dispatched via Resend: Cancel Gym Auto-Renewal to prevent ₹32,000 auto-debit",
+      "details": "Dispatched to laxmiharshithrebally@gmail.com. Resend Message ID: 01a18be3-73d2-70f1-9c6f-8d312248f76e. HTTP 200 OK.",
+      "targetId": "rem-gym-01",
+      "status": "SUCCESS"
+    },
     {
       "id": "log-1790870185373-t3nsx",
       "timestamp": "2026-10-01T15:56:25.373Z",
@@ -255,6 +267,18 @@
     }
   ],
   "emailLogs": [
+    {
+      "id": "email-1793348301755-k7wv1",
+      "timestamp": "2026-10-30T08:18:21.755Z",
+      "recipient": "laxmiharshithrebally@gmail.com",
+      "subject": "[TermGuard Action Required]: Cancel Gym Auto-Renewal to prevent ₹32,000 auto-debit",
+      "htmlContent": "\n<!DOCTYPE html>\n<html>\n<head>\n  <meta charset=\"utf-8\">\n  <title>TermGuard Alert</title>\n  <style>\n    body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; background-color: #0f172a; color: #f8fafc; margin: 0; padding: 24px; }\n    .container { max-width: 600px; margin: 0 auto; background-color: #1e293b; border: 1px solid #334155; border-radius: 16px; overflow: hidden; box-shadow: 0 20px 35px rgba(0,0,0,0.5); }\n    .header { background: linear-gradient(135deg, #090d16 0%, #1e1b4b 100%); padding: 28px 32px; border-bottom: 2px solid #6366f1; }\n    .brand { font-size: 13px; text-transform: uppercase; letter-spacing: 2px; color: #818cf8; font-weight: 700; margin-bottom: 8px; }\n    .title { font-size: 20px; font-weight: 700; color: #ffffff; margin: 0; line-height: 1.3; }\n    .content { padding: 32px; }\n    .badge { display: inline-block; padding: 6px 14px; border-radius: 9999px; font-size: 12px; font-weight: 700; text-transform: uppercase; margin-bottom: 16px; background-color: rgba(99, 102, 241, 0.2); color: #a5b4fc; border: 1px solid rgba(99, 102, 241, 0.4); }\n    .deadline-box { background-color: #0f172a; border-radius: 12px; padding: 18px 20px; margin: 20px 0; border-left: 4px solid #6366f1; }\n    .deadline-label { font-size: 11px; color: #94a3b8; text-transform: uppercase; letter-spacing: 1px; font-weight: 600; }\n    .deadline-value { font-size: 17px; font-weight: 700; color: #38bdf8; margin-top: 4px; }\n    .financial-alert { background-color: rgba(245, 158, 11, 0.15); border: 1px solid rgba(245, 158, 11, 0.3); border-radius: 10px; padding: 14px 18px; margin: 20px 0; color: #fbbf24; font-size: 14px; }\n    .clause-box { background-color: #0b0f17; border: 1px dashed #475569; border-radius: 10px; padding: 16px; margin: 20px 0; font-family: monospace; font-size: 12px; line-height: 1.6; color: #e2e8f0; }\n    .clause-title { font-size: 11px; text-transform: uppercase; letter-spacing: 1px; color: #94a3b8; margin-bottom: 8px; font-weight: 600; }\n    .footer { background-color: #090d16; padding: 20px 32px; border-top: 1px solid #1e293b; text-align: center; font-size: 12px; color: #64748b; }\n    .btn { display: inline-block; background-color: #4f46e5; color: #ffffff !important; text-decoration: none; padding: 12px 24px; border-radius: 8px; font-weight: 700; font-size: 14px; margin-top: 12px; }\n  </style>\n</head>\n<body>\n  <div class=\"container\">\n    <div class=\"header\">\n      <div class=\"brand\">TermGuard • Autonomous Contract Defense</div>\n      <h1 class=\"title\">⚠️ Action Required: Contract Cutoff Imminent</h1>\n    </div>\n    <div class=\"content\">\n      <span class=\"badge\">Deadline Alert</span>\n      <p style=\"font-size: 15px; line-height: 1.6; margin-top: 0; color: #cbd5e1;\">\n        TermGuard has detected an active contract obligation requiring your prompt intervention to prevent unwanted financial commitment or penalty forfeiture.\n      </p>\n\n      <div class=\"deadline-box\">\n        <div class=\"deadline-label\">Action Item</div>\n        <div style=\"font-size: 16px; font-weight: 600; color: #ffffff; margin-top: 4px;\">Cancel Gym Auto-Renewal to prevent ₹32,000 auto-debit</div>\n        <div class=\"deadline-label\" style=\"margin-top: 12px;\">Enforcement Cutoff Timestamp</div>\n        <div class=\"deadline-value\">Monday, 14 September 2026 at 11:30 pm</div>\n      </div>\n\n      \n      <div class=\"financial-alert\">\n        💰 <strong>Potential Money at Risk:</strong> ₹32,000 INR\n      </div>\n      \n\n      \n      <div class=\"clause-box\">\n        <div class=\"clause-title\">SOURCE CLAUSE (Section 4.3 & 7.2):</div>\n        \"TO CANCEL AUTO-RENEWAL: You must submit a written cancellation request at least 30 days before renewal (DEADLINE: SEPTEMBER 14, 2026). Late cancellations will not be refunded.\"\n      </div>\n      \n\n      \n      <div style=\"margin-top: 24px;\">\n        <div class=\"deadline-label\" style=\"margin-bottom: 8px;\">PRE-WRITTEN NOTICE DRAFT READY TO COPY:</div>\n        <div class=\"clause-box\" style=\"white-space: pre-wrap; font-size: 12px; color: #cbd5e1;\">\nTo Support / Membership Team,\n\nRE: Formal Notice of Cancellation for Annual Gym Membership\n\nAs per Section 4.3 of the Membership Terms, I am providing my 30-day written notice to cancel my annual membership pass. Please do not auto-debit my credit card / UPI for ₹32,000 for the upcoming renewal term.\n\nPlease confirm receipt of this cancellation notice in writing.\n\nThank you,\nHarshith R.\n        </div>\n      </div>\n      \n\n      <div style=\"text-align: center; margin-top: 28px;\">\n        <a href=\"http://localhost:3000/dashboard\" class=\"btn\">Open TermGuard Console →</a>\n      </div>\n    </div>\n    <div class=\"footer\">\n      Sent by <strong>TermGuard Autonomous Defense Core</strong> • Recipient: laxmiharshithrebally@gmail.com<br/>\n      Cryptographic Audit Hash: #rem-gym-01\n    </div>\n  </div>\n</body>\n</html>\n  ",
+      "status": "DELIVERED",
+      "messageId": "01a18be3-73d2-70f1-9c6f-8d312248f76e",
+      "reminderId": "rem-gym-01",
+      "reminderTitle": "Cancel Gym Auto-Renewal to prevent ₹32,000 auto-debit",
+      "sourceClause": "TO CANCEL AUTO-RENEWAL: You must submit a written cancellation request at least 30 days before renewal (DEADLINE: SEPTEMBER 14, 2026). Late cancellations will not be refunded."
+    },
     {
       "id": "email-1790870185372-etlol",
       "timestamp": "2026-10-01T15:56:25.372Z",
