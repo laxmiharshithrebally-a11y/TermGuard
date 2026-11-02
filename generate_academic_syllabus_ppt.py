@@ -3,6 +3,17 @@ import pptx
 from pptx.util import Inches, Pt
 from pptx.dml.color import RGBColor
 from pptx.enum.shapes import MSO_SHAPE
+from pptx.oxml.xmlchemy import OxmlElement
+
+def disable_bullets(p):
+    """Explicitly disables any bullet point rendering in PowerPoint XML."""
+    pPr = p._p.get_or_add_pPr()
+    for child in list(pPr):
+        tag = child.tag.split('}')[-1]
+        if tag in ('buNone', 'buChar', 'buAutoNum', 'buBlip', 'buSzPct', 'buSzPts', 'buFont'):
+            pPr.remove(child)
+    buNone = OxmlElement('a:buNone')
+    pPr.insert(0, buNone)
 
 def build_presentation():
     prs = pptx.Presentation()
@@ -11,13 +22,13 @@ def build_presentation():
 
     blank_layout = prs.slide_layouts[6]
 
-    # Academic Formal Palette
+    # Academic Palette
     C_BG = RGBColor(0xF8, 0xFA, 0xFC)          # Clean light slate
     C_CARD_BG = RGBColor(0xFF, 0xFF, 0xFF)     # Pure white container
     C_BORDER = RGBColor(0xCB, 0xD5, 0xE1)      # Subtle soft border
-    C_NAVY = RGBColor(0x1E, 0x3A, 0x8A)        # Formal deep navy
-    C_BLUE = RGBColor(0x25, 0x63, 0xEB)        # Academic royal blue
-    C_DARK = RGBColor(0x0F, 0x17, 0x2A)        # High contrast slate
+    C_NAVY = RGBColor(0x1E, 0x3A, 0x8A)        # Deep navy
+    C_BLUE = RGBColor(0x25, 0x63, 0xEB)        # Royal blue
+    C_DARK = RGBColor(0x0F, 0x17, 0x2A)        # Clear dark text
     C_MUTED = RGBColor(0x64, 0x74, 0x8B)       # Secondary slate
 
     diag_dir = r"D:\TERMGUARD\TERMGUARD\diagrams"
@@ -42,6 +53,7 @@ def build_presentation():
         tf.word_wrap = True
 
         p_tag = tf.paragraphs[0]
+        disable_bullets(p_tag)
         p_tag.text = f"TERMGUARD | MINI PROJECT PRESENTATION | {section_tag}".upper()
         p_tag.font.name = "Calibri"
         p_tag.font.size = Pt(10)
@@ -49,6 +61,7 @@ def build_presentation():
         p_tag.font.color.rgb = C_BLUE
 
         p_title = tf.add_paragraph()
+        disable_bullets(p_title)
         p_title.text = title_text
         p_title.font.name = "Calibri"
         p_title.font.size = Pt(24)
@@ -56,7 +69,7 @@ def build_presentation():
         p_title.font.color.rgb = C_NAVY
 
     def add_card(slide, statements):
-        # Full width clean container card - strictly NO bullet points
+        # Clean wide container card - strictly NO bullet points and NO dash symbols
         card = slide.shapes.add_shape(MSO_SHAPE.ROUNDED_RECTANGLE, Inches(0.8), Inches(1.58), Inches(11.733), Inches(5.35))
         card.fill.solid()
         card.fill.fore_color.rgb = C_CARD_BG
@@ -69,18 +82,19 @@ def build_presentation():
 
         for idx, (label, text) in enumerate(statements):
             p = tf.paragraphs[0] if idx == 0 else tf.add_paragraph()
+            disable_bullets(p)
             p.space_after = Pt(20)
             p.font.name = "Calibri"
             p.font.size = Pt(15.5)
             p.font.color.rgb = C_DARK
 
-            # Bold keyword label in royal blue
+            # Bold keyword label in royal blue with colon
             r_label = p.add_run()
-            r_label.text = label + "  —  "
+            r_label.text = label + ": "
             r_label.font.bold = True
             r_label.font.color.rgb = C_BLUE
 
-            # Clear simple English explanation
+            # Normal simple English statement
             r_text = p.add_run()
             r_text.text = text
             r_text.font.bold = False
@@ -102,6 +116,7 @@ def build_presentation():
     tf1.word_wrap = True
 
     p0 = tf1.paragraphs[0]
+    disable_bullets(p0)
     p0.text = "MINI PROJECT PRESENTATION"
     p0.font.name = "Calibri"
     p0.font.size = Pt(14)
@@ -110,6 +125,7 @@ def build_presentation():
     p0.space_after = Pt(8)
 
     p1 = tf1.add_paragraph()
+    disable_bullets(p1)
     p1.text = "TERMGUARD"
     p1.font.name = "Calibri"
     p1.font.size = Pt(40)
@@ -118,22 +134,34 @@ def build_presentation():
     p1.space_after = Pt(6)
 
     p2 = tf1.add_paragraph()
-    p2.text = "Autonomous Contract Analysis & Multi-Channel Deadline Defense System"
+    disable_bullets(p2)
+    p2.text = "Autonomous Contract Analysis and Multi-Channel Deadline Defense System"
     p2.font.name = "Calibri"
     p2.font.size = Pt(18)
     p2.font.color.rgb = C_MUTED
-    p2.space_after = Pt(26)
+    p2.space_after = Pt(24)
 
     p3 = tf1.add_paragraph()
-    p3.text = "PRESENTED BY:\n1. REBALLY LAXMI HARSHITH  (Roll No: 201224539090)\n2. SHUBHAM PRADHAN"
+    disable_bullets(p3)
+    p3.text = "PRESENTED BY"
     p3.font.name = "Calibri"
-    p3.font.size = Pt(14)
+    p3.font.size = Pt(13)
     p3.font.bold = True
-    p3.font.color.rgb = C_DARK
-    p3.space_after = Pt(14)
+    p3.font.color.rgb = C_NAVY
+    p3.space_after = Pt(4)
+
+    p3_names = tf1.add_paragraph()
+    disable_bullets(p3_names)
+    p3_names.text = "REBALLY LAXMI HARSHITH (Roll No: 201224539090)\nSHUBHAM PRADHAN"
+    p3_names.font.name = "Calibri"
+    p3_names.font.size = Pt(14)
+    p3_names.font.bold = True
+    p3_names.font.color.rgb = C_DARK
+    p3_names.space_after = Pt(16)
 
     p4 = tf1.add_paragraph()
-    p4.text = "Department of Computer Science & Engineering | Academic Year 2025–2026\nLive Application: https://termguard.onrender.com"
+    disable_bullets(p4)
+    p4.text = "Department of Computer Science and Engineering | Academic Year 2025-2026\nLive Application: https://termguard.onrender.com"
     p4.font.name = "Calibri"
     p4.font.size = Pt(11)
     p4.font.color.rgb = C_BLUE
@@ -169,9 +197,9 @@ def build_presentation():
     # =========================================================================
     s4 = prs.slides.add_slide(blank_layout)
     set_bg(s4)
-    add_header(s4, "Introduction  —  Modules, Libraries & Packages", "Item 3.1, 3.2, 3.3")
+    add_header(s4, "Introduction: Modules, Libraries and Packages", "Item 3.1, 3.2, 3.3")
     add_card(s4, [
-        ("System Modules", "Document Upload & Parser Module, AI Risk Scoring Engine, Scheduled Alert Notification Engine, and One-Click Dispute Letter Generator."),
+        ("System Modules", "Document Upload and Parser Module, AI Risk Scoring Engine, Scheduled Alert Notification Engine, and One-Click Dispute Letter Generator."),
         ("Frontend Libraries", "Next.js 14 App Router, React 18, Tailwind CSS for clean responsive user interfaces, and Lucide React Icons for visual indicators."),
         ("Backend Packages", "Node-cron for autonomous background scheduling, Resend API for email delivery, and PDF-Parse for reading document files."),
         ("Architecture Integration", "The modern stack ensures fast server-side rendering, secure API routes, and reliable daily execution on production cloud servers.")
@@ -182,7 +210,7 @@ def build_presentation():
     # =========================================================================
     s5 = prs.slides.add_slide(blank_layout)
     set_bg(s5)
-    add_header(s5, "System Analysis  —  Limitations & Motivation", "Item 4")
+    add_header(s5, "System Analysis: Limitations and Motivation", "Item 4")
     add_card(s5, [
         ("Limitations of Manual Ways", "Consumers rarely read 20-page legal documents, and standard calendar reminders require tedious manual date entry and calculation."),
         ("Forgotten Notice Windows", "Most subscription contracts require a 15 to 30 day cancellation notice prior to renewal, which consumers easily miss."),
@@ -195,7 +223,7 @@ def build_presentation():
     # =========================================================================
     s6 = prs.slides.add_slide(blank_layout)
     set_bg(s6)
-    add_header(s6, "System Analysis  —  Existing & Proposed Systems", "Item 4")
+    add_header(s6, "System Analysis: Existing and Proposed Systems", "Item 4")
     add_card(s6, [
         ("Existing System", "Completely manual process where users must read dense contracts, calculate notice dates in their head, and compose dispute letters from scratch."),
         ("Existing System Weakness", "Prone to human forgetfulness, lack of legal understanding, and missed deadlines leading to non-refundable account charges."),
@@ -221,7 +249,7 @@ def build_presentation():
     # =========================================================================
     s8 = prs.slides.add_slide(blank_layout)
     set_bg(s8)
-    add_header(s8, "System Design  —  Architecture", "Item 6")
+    add_header(s8, "System Design: Architecture", "Item 6")
 
     # Left text card
     card_arch = s8.shapes.add_shape(MSO_SHAPE.ROUNDED_RECTANGLE, Inches(0.8), Inches(1.58), Inches(5.6), Inches(5.35))
@@ -242,13 +270,14 @@ def build_presentation():
     ]
     for idx, (lbl, txt) in enumerate(arch_points):
         p = tf_arch.paragraphs[0] if idx == 0 else tf_arch.add_paragraph()
+        disable_bullets(p)
         p.space_after = Pt(14)
         p.font.name = "Calibri"
         p.font.size = Pt(14)
         p.font.color.rgb = C_DARK
 
         r_l = p.add_run()
-        r_l.text = lbl + "  —  "
+        r_l.text = lbl + ": "
         r_l.font.bold = True
         r_l.font.color.rgb = C_BLUE
 
@@ -265,7 +294,7 @@ def build_presentation():
     # =========================================================================
     s9 = prs.slides.add_slide(blank_layout)
     set_bg(s9)
-    add_header(s9, "System Design  —  UML Diagrams", "Item 6.1")
+    add_header(s9, "System Design: UML Diagrams", "Item 6.1")
 
     # Left text card
     card_uml = s9.shapes.add_shape(MSO_SHAPE.ROUNDED_RECTANGLE, Inches(0.8), Inches(1.58), Inches(5.6), Inches(5.35))
@@ -285,13 +314,14 @@ def build_presentation():
     ]
     for idx, (lbl, txt) in enumerate(uml_points):
         p = tf_uml.paragraphs[0] if idx == 0 else tf_uml.add_paragraph()
+        disable_bullets(p)
         p.space_after = Pt(20)
         p.font.name = "Calibri"
         p.font.size = Pt(14.5)
         p.font.color.rgb = C_DARK
 
         r_l = p.add_run()
-        r_l.text = lbl + "  —  "
+        r_l.text = lbl + ": "
         r_l.font.bold = True
         r_l.font.color.rgb = C_BLUE
 
@@ -308,7 +338,7 @@ def build_presentation():
     # =========================================================================
     s10 = prs.slides.add_slide(blank_layout)
     set_bg(s10)
-    add_header(s10, "System Design  —  Flow-chart", "Item 6.2")
+    add_header(s10, "System Design: Flow-chart", "Item 6.2")
 
     # Left text card
     card_flow = s10.shapes.add_shape(MSO_SHAPE.ROUNDED_RECTANGLE, Inches(0.8), Inches(1.58), Inches(5.6), Inches(5.35))
@@ -322,20 +352,21 @@ def build_presentation():
     tf_flow.word_wrap = True
 
     flow_points = [
-        ("Step 1: Document Input", "User submits agreement text or uploads a contract document into the web interface."),
-        ("Step 2: Risk & Date Extraction", "System parses the text to identify renewal dates, notice windows, and hidden trap clauses."),
-        ("Step 3: Background Tracking", "The Node-cron background service checks remaining notice days every 24 hours."),
-        ("Step 4: Proactive Alert Dispatch", "Dispatches automated emails at 3 days, 1 day, and on deadline day with ready-to-use dispute letters.")
+        ("Document Input", "User submits agreement text or uploads a contract document into the web interface."),
+        ("Risk and Date Extraction", "System parses the text to identify renewal dates, notice windows, and hidden trap clauses."),
+        ("Background Tracking", "The Node-cron background service checks remaining notice days every 24 hours."),
+        ("Proactive Alert Dispatch", "Dispatches automated emails at 3 days, 1 day, and on deadline day with ready-to-use dispute letters.")
     ]
     for idx, (lbl, txt) in enumerate(flow_points):
         p = tf_flow.paragraphs[0] if idx == 0 else tf_flow.add_paragraph()
+        disable_bullets(p)
         p.space_after = Pt(16)
         p.font.name = "Calibri"
         p.font.size = Pt(14)
         p.font.color.rgb = C_DARK
 
         r_l = p.add_run()
-        r_l.text = lbl + "  —  "
+        r_l.text = lbl + ": "
         r_l.font.bold = True
         r_l.font.color.rgb = C_BLUE
 
@@ -382,9 +413,9 @@ def build_presentation():
 
     # 3 screenshot cards side-by-side
     screens = [
-        ("screen_1.png", "1. Active Dashboard", "Shows active agreements, countdown timers, and risk ratings."),
-        ("screen_2.png", "2. Add Agreement Modal", "Simple input interface for submitting contract text and renewal dates."),
-        ("screen_3.png", "3. Delivered Email Alert", "Real Gmail notification containing the ready-to-send dispute letter.")
+        ("screen_1.png", "Active Dashboard", "Shows active agreements, countdown timers, and risk ratings."),
+        ("screen_2.png", "Add Agreement Modal", "Simple input interface for submitting contract text and renewal dates."),
+        ("screen_3.png", "Delivered Email Alert", "Real Gmail notification containing the ready-to-send dispute letter.")
     ]
 
     card_w = Inches(3.75)
@@ -413,6 +444,7 @@ def build_presentation():
         stf.word_wrap = True
 
         sp1 = stf.paragraphs[0]
+        disable_bullets(sp1)
         sp1.text = stitle
         sp1.font.name = "Calibri"
         sp1.font.size = Pt(14)
@@ -421,6 +453,7 @@ def build_presentation():
         sp1.space_after = Pt(4)
 
         sp2 = stf.add_paragraph()
+        disable_bullets(sp2)
         sp2.text = sdesc
         sp2.font.name = "Calibri"
         sp2.font.size = Pt(12)
